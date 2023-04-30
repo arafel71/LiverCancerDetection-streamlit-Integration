@@ -1,0 +1,12 @@
+******************************************************
+version 0.1 : first deployment streamlit
+no control of file format
+first layer of the svs file display in preview
+***---------------------------------------------------
+version 0.2 :
+Control adding : only svs file accepted
+All the scenes of the svs file are displayed in preview
+Title with white character on pinkinsh background
+
+
+******************************************************

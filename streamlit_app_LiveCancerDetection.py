@@ -108,7 +108,7 @@ if uploaded_file is not None:
     # open test image 
     img = Image.open("dog.jpg")
 
-
+    st.image(img, caption="dog")
     # image transformation ,pre-process the image and prepare a batch to be passed through the network.
     img_t = transform(img)
     batch_t = torch.unsqueeze(img_t, 0)
@@ -120,7 +120,21 @@ if uploaded_file is not None:
     # inference prediction
 
     out = alexnet(batch_t)
-    st.write(out.shape)
+    st.write("model shape : " + out.shape)
+
+    with open('imagenet_classes.txt') as f:
+      classes = [line.strip() for line in f.readlines()]
+
+
+    # we need to find the index where the maximum score in output vector out occurs.
+    # We will use this index to find out the prediction.  
+
+    _, index = torch.max(out, 1)
+     
+    percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
+     
+    st.write(labels[index[0]], percentage[index[0]].item())
+
 
     #**************************
     #for archive
