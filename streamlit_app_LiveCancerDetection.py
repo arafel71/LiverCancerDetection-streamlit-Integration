@@ -148,7 +148,8 @@ if uploaded_file is not None:
 
     _, indices = torch.sort(out, descending=True)
 
-    st.write(classes[idx], percentage[idx].item()) for idx in indices[0][:5]
+    for idx in indices[0][:5]:
+      st.write(classes[idx], percentage[idx].item()) 
 
 
     #**************************
