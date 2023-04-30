@@ -113,6 +113,9 @@ if uploaded_file is not None:
     img_t = transform(img)
     batch_t = torch.unsqueeze(img_t, 0)
 
+    st.write("image transformed :")
+
+    st.image(img, caption="dog")
     # before inference, we need to put the model in eval mode
 
     alexnet.eval()
