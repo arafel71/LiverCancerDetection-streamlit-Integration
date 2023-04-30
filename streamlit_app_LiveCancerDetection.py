@@ -25,7 +25,7 @@ pathtempDir = os.path.join(directory + r'//tempDir/')
 
 
 
-st.markdown(f'<h1 style="color:#ffffff;background-color:#Eaa7a6;font-size:48px;">{"  Liver Cancer Detection Application"}</h1>', unsafe_allow_html=True)
+st.markdown(f'<h1 style="color:#ffffff;padding:5px;margin:5px;background-color:#Eaa7a6;font-size:40px;">{"  Liver Cancer Detection Application"}</h1>', unsafe_allow_html=True)
 
 
 """
