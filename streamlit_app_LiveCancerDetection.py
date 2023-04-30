@@ -25,6 +25,7 @@ pathtempDir = os.path.join(directory + r'//tempDir/')
 
 
 
+st.markdown(f'<h1 style="color:#ffffff;background-color:#Eaa7a6;font-size:24px;">{"Liver Cancer Detection Application”"}</h1>', unsafe_allow_html=True)
 
 
 """
@@ -40,7 +41,7 @@ The preview display the first layer of the svs file.
 st.button("Diagnostic", key=None, help=None, on_click=None, args=None, kwargs=None,  type="secondary", disabled=True, use_container_width=False)
 
 
-uploaded_file = st.file_uploader("Choose a file", type=['svs'])
+uploaded_file = st.file_uploader("Choose a .svs file", type=['svs'])
 
 
 if uploaded_file is not None:
