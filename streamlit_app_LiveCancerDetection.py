@@ -115,7 +115,8 @@ if uploaded_file is not None:
 
     st.write("image transformed :")
 
-    st.image(img, caption="dog")
+    st.image(img_t, caption="dog")
+    
     # before inference, we need to put the model in eval mode
 
     alexnet.eval()
@@ -123,7 +124,9 @@ if uploaded_file is not None:
     # inference prediction
 
     out = alexnet(batch_t)
-    st.write("model shape : " + out.shape)
+
+    st.write("model shape : ")
+    st.write(out.shape)
 
     with open('imagenet_classes.txt') as f:
       classes = [line.strip() for line in f.readlines()]
