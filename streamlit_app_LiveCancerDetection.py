@@ -112,8 +112,8 @@ if uploaded_file is not None:
     # image transformation ,pre-process the image and prepare a batch to be passed through the network.
     img_t = transform(img)
 
-    st.write("image transformed :")
-    st.image(img_t, caption="dog")
+    #st.write("image transformed :")
+    #st.image(img_t, caption="dog")
 
     batch_t = torch.unsqueeze(img_t, 0)
 
