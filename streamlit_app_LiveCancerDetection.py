@@ -143,7 +143,7 @@ if uploaded_file is not None:
      
     percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
      
-    st.write(labels[index[0]], percentage[index[0]].item())
+    st.write(classes[index[0]], percentage[index[0]].item())
 
 
     #**************************
