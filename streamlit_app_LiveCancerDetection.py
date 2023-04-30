@@ -21,7 +21,8 @@ Image.MAX_IMAGE_PIXELS = 1000000000
 from torchvision import models
 import torch
  
-dir(models)
+#dir(models)
+st.write(dir(models))
 
 directory = os.getcwd()
 
