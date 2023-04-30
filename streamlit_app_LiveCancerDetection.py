@@ -18,6 +18,11 @@ Image.MAX_IMAGE_PIXELS = 1000000000
 
 
 
+from torchvision import models
+import torch
+ 
+dir(models)
+
 directory = os.getcwd()
 
 
@@ -33,7 +38,7 @@ st.markdown(f'<h1 style="color:#ffffff;padding:5px;margin:5px;background-color:#
 
 Upload your SVS Whole slide image file and click the button Diagnostic !
 
-The preview display the first layer of the svs file.
+The preview display all the layers of the svs file.
 
 
 """
@@ -56,24 +61,15 @@ if uploaded_file is not None:
    
     ########################
     num_scenes = slide.num_scenes
-    #scene = slide.get_scene(0)   
 
-    #st.write(num_scenes, scene.name, scene.rect, scene.num_channels)
 
     st.write("Number of scenes in the file : ", num_scenes)
-
-
-
-
 
     """
     # Preview
     #  
 
     """
-
-    #st.image(myimage, caption='Image uploaded')
-
 
     num_scenes = slide.num_scenes
     for index in range(0, num_scenes):
@@ -82,7 +78,7 @@ if uploaded_file is not None:
       #  retrieves the image of the layerand scales it to 1500 pixels width picture
 
       myimage = scene.read_block(size=(1500,0))
-      mycaption = "Scene" + str(index + 1)
+      mycaption = "Scene " + str(index + 1)
       st.image(myimage, caption=mycaption)
 
       #print(slide.get_scene(index).name)
@@ -94,4 +90,8 @@ if uploaded_file is not None:
 
    
 
+    #for archive
+    #scene = slide.get_scene(0)   
 
+    #st.write(num_scenes, scene.name, scene.rect, scene.num_channels)
+    #st.image(myimage, caption='Image uploaded')

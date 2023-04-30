@@ -1,4 +1,5 @@
 slideio
+torchvision
 altair
 pandas
 streamlit
