@@ -146,6 +146,11 @@ if uploaded_file is not None:
     st.write(classes[index[0]], percentage[index[0]].item())
 
 
+    _, indices = torch.sort(out, descending=True)
+
+    st.write(classes[idx], percentage[idx].item()) for idx in indices[0][:5]
+
+
     #**************************
     #for archive
     #scene = slide.get_scene(0)   
